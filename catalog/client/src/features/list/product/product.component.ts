@@ -1,3 +1,5 @@
+import { createProdutc } from "./product.factory";
+
 const elementName = 'catalog-product';
 
 customElements.define(elementName, class extends HTMLElement {
@@ -61,7 +63,16 @@ customElements.define(elementName, class extends HTMLElement {
     }
 
     private addToBasket(): void {
-        console.log(this._attributes.get('id'));
+        window.dispatchEvent(new CustomEvent('addToBasket', {
+            detail: { 
+                product: createProdutc(
+                    this._attributes.get('id'),
+                    this._attributes.get('name'),
+                    this._attributes.get('price'),
+                    this._attributes.get('thumbnail')
+                )
+            }
+        }));
     }
 });
 

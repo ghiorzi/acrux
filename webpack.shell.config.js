@@ -51,7 +51,8 @@ const shell = {
         name: "shell"
       },
       remotes: {
-        catalog: "catalog"
+        catalog: "catalog",
+        layout: "layout"
       },
     }),
     new HtmlWebpackPlugin({

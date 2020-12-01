@@ -7,6 +7,8 @@
   "scripts": {
     "start:shell": "npx webpack serve --config webpack.shell.config.js",
     "start:catalog": "npx webpack serve --config webpack.catalog.config.js",
+    "start:checkout": "npx webpack serve --config webpack.checkout.config.js",
+    "start:layout": "npx webpack serve --config webpack.layout.config.js",
     "build": "webpack --config webpack.shell.config.js && webpack --config webpack.catalog.config.js"
   },
   "author": "",

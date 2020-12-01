@@ -3,10 +3,14 @@ import "./styles.css";
 const container: Element = document.querySelector('.acrux-container');
 
 (async function () {
-    const module = await import('catalog/page');
-    const element = document.createElement(module.elementName);
+    const catalog = await import('catalog/page');
+    const layout = await import('layout/page');
+    
+    const navbarElement = document.createElement(layout.elementName);
+    const catalogElement = document.createElement(catalog.elementName);
 
-    container.appendChild(element);
+    container.appendChild(navbarElement);
+    container.appendChild(catalogElement);
 })();
 
 export {};
