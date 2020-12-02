@@ -1,6 +1,8 @@
+import { setupRoutes } from "./routes";
 import "./styles.css";
 
-const container: Element = document.querySelector('.acrux-container');
+const layoutContainer: Element = document.querySelector('.layout-container');
+const appContainer: Element = document.querySelector('.app-container');
 
 (async function () {
     const catalog = await import('catalog/page');
@@ -9,8 +11,10 @@ const container: Element = document.querySelector('.acrux-container');
     const navbarElement = document.createElement(layout.elementName);
     const catalogElement = document.createElement(catalog.elementName);
 
-    container.appendChild(navbarElement);
-    container.appendChild(catalogElement);
+    layoutContainer.appendChild(navbarElement);
+    appContainer.appendChild(catalogElement);
+
+    setupRoutes(appContainer);
 })();
 
 export {};

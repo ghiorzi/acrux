@@ -1,7 +1,6 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const catalog =  {
   entry: "./catalog/client/main",
@@ -45,7 +44,6 @@ const catalog =  {
     ],
   },  
   plugins: [
-    new MiniCssExtractPlugin(),
     new ModuleFederationPlugin({
       name: "catalog",
       library: { 

@@ -18,14 +18,23 @@ customElements.define(elementName, class extends HTMLElement {
             </div>
         `;
 
-        window.addEventListener(
-            'addToBasket', 
-            (event: CustomEvent) => this.handleAddToBasket(event),
-        );
+        this.setListeners();
     }
 
     public async disconnectedCallback(): Promise<void> {
         window.removeEventListener('addToBasket', this.handleAddToBasket);
+    }
+
+    private setListeners(): void {
+        document.querySelector('.checkout').addEventListener('click', () => {
+            window.history.pushState({}, 'checkout', 'checkout');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+        });
+
+        window.addEventListener(
+            'addToBasket', 
+            (event: CustomEvent) => this.handleAddToBasket(event),
+        );
     }
 
     private handleAddToBasket(event: CustomEvent): void {

@@ -1,7 +1,6 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const checkout =  {
   entry: "./checkout/client/main",
@@ -45,7 +44,6 @@ const checkout =  {
     ],
   },  
   plugins: [
-    new MiniCssExtractPlugin(),
     new ModuleFederationPlugin({
       name: "checkout",
       library: { 
@@ -54,7 +52,8 @@ const checkout =  {
       },
       filename: "checkout.js",
       exposes: {
-        "./basket": "./checkout/client/src/basket/checkout-basket"
+        "./basket": "./checkout/client/src/basket/checkout-basket",
+        "./page": "./checkout/client/src/details/checkout-details"
       },
     }),
     new HtmlWebpackPlugin({

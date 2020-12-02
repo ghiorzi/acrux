@@ -52,6 +52,7 @@ const shell = {
       },
       remotes: {
         catalog: "catalog",
+        checkout: "checkout",
         layout: "layout"
       },
     }),
