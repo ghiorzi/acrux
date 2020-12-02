@@ -26,7 +26,7 @@ customElements.define(elementName, class extends HTMLElement {
     }
 
     private setListeners(): void {
-        document.querySelector('.checkout').addEventListener('click', () => {
+        document.querySelector('.checkout').addEventListener('click', (): void => {
             window.history.pushState({}, 'checkout', 'checkout');
             window.dispatchEvent(new PopStateEvent('popstate'));
         });

@@ -70,3 +70,7 @@
   font-weight: 500;
   font-size: 1.25rem;
 }
+
+.navbar__content__header__logo:hover {
+  cursor: pointer;
+}

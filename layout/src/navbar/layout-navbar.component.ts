@@ -8,6 +8,7 @@ customElements.define(elementName, class extends HTMLElement {
 
     public async connectedCallback(): Promise<void> {
       this.innerHTML = this.render();
+      this.setListeners();
 
       const basket = await import('checkout/basket');
       const container: Element = document.querySelector('.navbar__content__menu__options__option');
@@ -25,7 +26,7 @@ customElements.define(elementName, class extends HTMLElement {
           <div class="navbar__content">
         
             <div class="navbar__content__header">
-              <a href="#">
+              <a class="js-nagivate-to-home">
                 <h4 class="navbar__content__header__logo">Acrux</h4>
               </a>
             </div>
@@ -38,6 +39,15 @@ customElements.define(elementName, class extends HTMLElement {
           </div>
         </nav>
       `;
+    }
+
+    private setListeners(): void {
+      document
+        .querySelector('.js-nagivate-to-home')
+        .addEventListener('click', (): void => {
+          window.history.pushState({}, '/', '/');
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        })
     }
 });
 
