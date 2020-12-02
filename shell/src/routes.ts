@@ -1,4 +1,4 @@
-approachapproachapproachconst routes = new Map<string, Function>(
+const routes = new Map<string, Function>(
     [
         ['/', async () => await import('catalog/page')],
         ['/checkout', async () => await import('checkout/page')],
