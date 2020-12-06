@@ -3,7 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const checkout =  {
-  entry: "./checkout/client/main",
+  entry: "./checkout/main",
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist/checkout"),
@@ -52,12 +52,12 @@ const checkout =  {
       },
       filename: "checkout.js",
       exposes: {
-        "./basket": "./checkout/client/src/basket/checkout-basket",
-        "./page": "./checkout/client/src/details/checkout-details"
+        "./basket": "./checkout/src/basket/checkout-basket",
+        "./page": "./checkout/src/details/checkout-details"
       },
     }),
     new HtmlWebpackPlugin({
-      template: "./checkout/client/public/index.html"
+      template: "./checkout/public/index.html"
     }),
   ]    
 };

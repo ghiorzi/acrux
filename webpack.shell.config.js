@@ -4,7 +4,9 @@ const path = require("path");
 
 const shell = {
   entry: [
-    "./shell/main",
+    './shell/main',
+    './shell/vendor/tailwind.css',
+    './shell/vendor/toastr.css'
   ],
   mode: "development",
   devServer: {
@@ -19,23 +21,24 @@ const shell = {
         use: [
           'style-loader',
           {
-            loader: 'css-loader', 
+            loader: 'css-loader',
             options: {
               importLoaders: 1,
-            }
+            },
           },
-        ],
-    },
+          'postcss-loader',
+        ]
+      },
       {
         test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      },      
+      },
     ],
-  },  
+  },
   resolve: {
-    extensions: [ '.ts', '.js' ],
-  },  
+    extensions: ['.ts', '.js'],
+  },
   output: {
     publicPath: "http://localhost:5000/",
     uniqueName: 'shell',
@@ -46,7 +49,7 @@ const shell = {
     new ModuleFederationPlugin({
       name: "shell",
       remoteType: 'var',
-      library: { 
+      library: {
         type: "var",
         name: "shell"
       },

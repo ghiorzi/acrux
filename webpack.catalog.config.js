@@ -3,7 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const catalog =  {
-  entry: "./catalog/client/main",
+  entry: "./catalog/main",
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist/catalog"),
@@ -52,11 +52,11 @@ const catalog =  {
       },
       filename: "catalog.js",
       exposes: {
-        "./page": "./catalog/client/src/features/catalog-page"
+        "./page": "./catalog/src/features/catalog-page"
       },
     }),
     new HtmlWebpackPlugin({
-      template: "./catalog/client/public/index.html"
+      template: "./catalog/public/index.html"
     }),
   ]    
 };

@@ -1,3 +1,5 @@
+import './logo/layout-logo.component';
+
 const elementName = 'layout-navbar';
 
 customElements.define(elementName, class extends HTMLElement {
@@ -11,7 +13,7 @@ customElements.define(elementName, class extends HTMLElement {
       this.setListeners();
 
       const basket = await import('checkout/basket');
-      const container: Element = document.querySelector('.navbar__content__menu__options__option');
+      const container: Element = document.querySelector('.js-checkout-menu');
       const basketElement = document.createElement(basket.elementName);
   
       container.appendChild(basketElement);
@@ -22,18 +24,16 @@ customElements.define(elementName, class extends HTMLElement {
 
       return this.innerHTML = `
           <style>${style.default}</style>
-          <nav class="navbar">
-          <div class="navbar__content">
+          <nav class="navbar flex flex-wrap items-center justify-between">
+          <div class="navbar__content flex flex-wrap items-center justify-between">
         
-            <div class="navbar__content__header">
-              <a class="js-nagivate-to-home">
-                <h4 class="navbar__content__header__logo">Acrux</h4>
-              </a>
+            <div class="flex items-center">
+                <layout-logo class="js-nagivate-to-home"></layout-logo>
             </div>
         
-            <div class="navbar__content__menu">
-              <ul class="navbar__content__menu__options">
-                <li class="navbar__content__menu__options__option"></li>
+            <div class="navbar__content__menu flex items-center">
+              <ul class="flex flex-auto flex-grow">
+                <li class="js-checkout-menu"></li>
               </ul>
             </div>
           </div>

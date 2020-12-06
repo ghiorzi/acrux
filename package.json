@@ -5,17 +5,18 @@
   "description": "micro-frontend poc",
   "main": "index.js",
   "scripts": {
+    "start": "npm-run-all --parallel start:*",
     "start:shell": "npx webpack serve --config webpack.shell.config.js",
     "start:catalog": "npx webpack serve --config webpack.catalog.config.js",
     "start:checkout": "npx webpack serve --config webpack.checkout.config.js",
-    "start:layout": "npx webpack serve --config webpack.layout.config.js",
-    "build": "webpack --config webpack.shell.config.js && webpack --config webpack.catalog.config.js"
+    "start:layout": "npx webpack serve --config webpack.layout.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
+    "npm-run-all": "^4.1.5",
     "raw-loader": "^4.0.2",
     "style-loader": "^2.0.0",
     "tailwindcss": "^2.0.1",
@@ -24,5 +25,11 @@
     "webpack": "^5.5.0",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "3.11.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.0.4",
+    "postcss": "^8.1.14",
+    "postcss-loader": "^4.1.0",
+    "toastr": "^2.1.4"
   }
 }
