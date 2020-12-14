@@ -1,0 +1,40 @@
+.navbar {
+  padding: 1.15rem 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
+  background-color: var(--secondary);
+}
+
+.navbar__content {
+  width: 1170px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar,
+.navbar__content {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .navbar__content {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .navbar__content {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar__content {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar__content {
+    max-width: 1140px;
+  }
+}

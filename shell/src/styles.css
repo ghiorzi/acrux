@@ -1,0 +1,22 @@
+:root {
+    --primary:  #18191a;
+    --secondary: #242526;
+    --tertiary: #E1457D;
+
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+  
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.925rem;
+
+    background-color: var(--primary);
+}
+
+  

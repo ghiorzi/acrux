@@ -1,0 +1,12 @@
+.checkout {
+    color: var(--tertiary);
+}
+
+.checkout svg {
+    height: 25px;
+    width: 25px;
+}
+
+.checkout:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+.checkout-details, .checkout-details-empty-basket {
+    color: var(--tertiary);
+}
+
+.checkout-details-empty-basket p{
+    font-size: 3rem;
+}
+
+.checkout-details__column {
+    font-size: 1.5rem;
+}
